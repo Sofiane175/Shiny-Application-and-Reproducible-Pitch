@@ -23,8 +23,35 @@ ui <- page_sidebar(
         checkboxInput("show_margins", "Show marginal plots", TRUE),
         checkboxInput("smooth", "Add regression line", TRUE),
     ),
-    plotOutput("scatter")
+    mainPanel(
+        tabsetPanel(
+            tabPanel("output", 
+                     plotOutput("scatter"),
+                     ),
+        tabPanel("Documentation",
+                 p(h4("Edgar Anderson's Iris Data:")),
+                 br(),
+                 helpText("This application explore the famous (Fisher's or Anderson's) iris data set.
+                          The dataset contains the measurements in centimeters of the variables sepal 
+                          length and width and petal length and width, respectively, 
+                          for 50 flowers from each of 3 species of iris. 
+                          The species are Iris setosa, versicolor, and virginica."),
+                
+                      
+        br(),
+        helpText("The applications allows to plot a scatter plot of quantitative variables. 
+        You can color the plot by species or filter on some of them. 
+        The app allows to plot a marginal distribution per variable 
+        as well a regression line per species"
+        
+        
+        )
+                 )
+    )
+    
+    )
 )
+
 
 server <- function(input, output, session) {
     subsetted <- reactive({
