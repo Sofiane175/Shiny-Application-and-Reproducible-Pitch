@@ -1,0 +1,12 @@
+name: mtcars_analysis
+title: mtcars_analysis
+username: sofsof1016
+account: sofsof1016
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10947384
+bundleId: 8153219
+url: https://sofsof1016.shinyapps.io/mtcars_analysis/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
